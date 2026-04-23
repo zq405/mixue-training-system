@@ -5,9 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // 优先读取 Render 上设置的环境变量，如果没有则使用本地默认值
-$host = getenv('DB_HOST') ?: 'localhost';
-$user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') ?: '';
+$host = getenv('DB_HOST') ?: 'mixuetrianingsystem';
+$user = getenv('DB_USER') ?: 'admin405';
+$pass = getenv('DB_PASS') ?: 'mixuesk';
 $db = getenv('DB_NAME') ?: 'mixue_db';
 
 $conn = new mysqli($host, $user, $pass, $db);
