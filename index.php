@@ -1,3 +1,20 @@
+<?php
+// index.php - 网站入口文件
+session_start();
+
+// 检查用户是否已经登录
+if (isset($_SESSION['user'])) {
+    // 如果已登录，直接跳转到培训仪表盘页面
+    header("Location: dashboard.php");
+    exit();
+}
+
+// 如果未登录，则显示登录页面
+// 你可以保留原来的内容，但建议直接显示登录表单或跳转到 login.php
+
+// 引入登录页面（推荐使用这种方式，避免代码重复）
+include 'login.php';
+?>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
