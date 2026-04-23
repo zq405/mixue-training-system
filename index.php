@@ -1,19 +1,20 @@
 <?php
-// index.php - 网站入口文件
+// index.php - 修复版本
 session_start();
 
-// 检查用户是否已经登录
+// 调试模式（临时开启，部署后关闭）
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+
+// 检查用户是否已登录
 if (isset($_SESSION['user'])) {
-    // 如果已登录，直接跳转到培训仪表盘页面
     header("Location: dashboard.php");
     exit();
 }
 
-// 如果未登录，则显示登录页面
-// 你可以保留原来的内容，但建议直接显示登录表单或跳转到 login.php
-
-// 引入登录页面（推荐使用这种方式，避免代码重复）
-include 'login.php';
+// 如果未登录，跳转到登录页
+header("Location: login.php");
+exit();
 ?>
 <!DOCTYPE html>
 <html lang="zh">

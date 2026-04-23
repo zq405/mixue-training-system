@@ -1,15 +1,7 @@
-# Enable URL rewriting
-RewriteEngine On
-
-# Set default charset
-AddDefaultCharset UTF-8
-
-# PHP settings
+# .htaccess - 禁用错误显示（生产环境）
 php_flag display_errors off
-php_value error_reporting 1
+php_flag log_errors on
+php_value error_log error_log
 
-# Redirect to login if not authenticated
-RewriteCond %{REQUEST_URI} !^/login\.php$
-RewriteCond %{REQUEST_URI} !^/login_process\.php$
-RewriteCond %{REQUEST_URI} !^/images/
-RewriteRule ^ - [L]
+# 设置默认首页
+DirectoryIndex index.php login.php
