@@ -1,0 +1,15 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# PHP settings
+php_flag display_errors off
+php_value error_reporting 1
+
+# Redirect to login if not authenticated
+RewriteCond %{REQUEST_URI} !^/login\.php$
+RewriteCond %{REQUEST_URI} !^/login_process\.php$
+RewriteCond %{REQUEST_URI} !^/images/
+RewriteRule ^ - [L]
