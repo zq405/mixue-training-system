@@ -13,7 +13,7 @@ $pass = getenv('DB_PASS') ?: '';
 $db = getenv('DB_NAME') ?: 'mixue_db';
 
 // 创建连接
-$conn = new mysqli($mixuetrainingsystem, $admin405, $mixuesk, $mixue_db);
+$conn = new mysqli($host, $user, $pass, $db);
 
 // 检查连接
 if ($conn->connect_error) {
